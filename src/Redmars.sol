@@ -6,7 +6,6 @@ import "./RedmarsCollection.sol";
 contract Redmars {
 
     string public ERR_NOT_OWNER = "6010";
-    // string public ERR_COLLECTION_NOTSTARTED = "6024";
     
     string public name = "R E D M A R S";
 
