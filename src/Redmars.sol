@@ -35,35 +35,16 @@ contract Redmars {
 
     function startNewCollection() external onlyOwner() returns(address addr) {
         bytes memory bytecode = type(RedmarsCollection).creationCode;
-
-    
-        // address newcollection;
-        
     
         assembly {
             
             addr := create(0,add(bytecode, 0x20), mload(bytecode))
             if iszero(extcodesize(addr)) { revert(0, 0) }
         }
-
-        // collections[_collectionId] = _collection;
-
-        // return bytecodeSize;
     }
 
 
 
 
-
-
-
-    // function mintInCollection(uint256 _collectionId) external  {
-    //     Collection memory _collection = collections[_collectionId];
-
-    //     require( _collection.started, ERR_COLLECTION_NOTSTARTED );
-
-
-    //     collections[_collectionId].tokenCount += 1;
-    // }
 
 }
